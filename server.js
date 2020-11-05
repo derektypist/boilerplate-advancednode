@@ -11,8 +11,11 @@ app.use('/public', express.static(process.cwd() + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Set Up Template Engine
+app.set('view engine', 'pug');
+
 app.route('/').get((req, res) => {
-  res.render('Load your view here');
+  res.render(process.cwd() + '/views/pug');
 });
 
 app.listen(process.env.PORT || 3000, () => {
