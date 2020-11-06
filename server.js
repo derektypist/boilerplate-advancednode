@@ -58,9 +58,7 @@ myDB(async (client) => {
 });
 
 
-app.route('/').get((req, res) => {
-  res.render('Load your view here');
-});
+
 
 app.listen(process.env.PORT || 3000, () => {
   console.log('Listening on port ' + process.env.PORT);
