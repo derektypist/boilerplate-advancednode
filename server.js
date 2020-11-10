@@ -60,7 +60,7 @@ myDB(async (client) => {
     res.status(404).type('text').send('Not Found');
   });
   
-  passport.use(new localStrategy(
+  passport.use(new LocalStrategy(
   function(username, password, done) {
     myDatabase.findOne({username:username}, function(err,user) {
       console.log('User ' + username + ' attempted to log in.');
